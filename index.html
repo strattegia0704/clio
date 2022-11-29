@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      rel="shortcut icon"
-      href="./src/assets/favicon.ico"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="./src/styles/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clio</title>
-  </head>
-  <body id="body" style="background-color: #F7FFF7">
-    <div id="preloader">
-      <div class="inner">
-        <div class="balls">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="./src/assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./src/styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clio</title>
+</head>
+
+<body id="body" style="background-color: #F7FFF7">
+  <div id="preloader">
+    <div class="inner">
+      <div class="balls">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
-    <div id="root"></div>
-    <script type="module" src="./src/main.jsx"></script>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <div id="root"></div>
+  <script type="module" src="./src/main.jsx"></script>
+  <script src="script.js"></script>
+  <script>
+    $(window).on('load', function () {
+      $('#preloader .inner').fadeOut();
+      $('#preloader').delay(25).fadeOut('slow');
+      $('body').delay(25).css({ 'overflow': 'visible' });
+    })
+  </script>
+</body>
+
 </html>
