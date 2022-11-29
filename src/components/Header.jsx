@@ -32,6 +32,9 @@ const Header = () => {
               <Nav.Link as={Link} id='nav-link' className='nav-link' to='/contato'>
                 Contato
               </Nav.Link>
+              <Nav.Link as={Link} id='Profile-link' className='nav-link' to='#'>
+                Perfil
+              </Nav.Link>
             </Nav>
             <div className='User'>
               <Link to='/user' className='User-link' id='User-btn'>
