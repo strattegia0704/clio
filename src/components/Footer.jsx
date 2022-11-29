@@ -22,6 +22,9 @@ const Footer = () => {
                         <h6> Membros do Grupo</h6>
                         <ul className="footer-links">
                             <li>
+                                <a style={{fontWeight: 'bolder',}}>Turma: 2º D</a>
+                            </li>
+                            <li>
                                 <a> Andressa Hitschelly</a>
                             </li>
                             <li>
