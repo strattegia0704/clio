@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-import '../styles/index.css'
+import '../styles/style.css'
 
 import Header from "../components/Header"
 import Footer from "../components/Footer"
@@ -10,23 +10,23 @@ import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import CardImg from 'react-bootstrap/CardImg'
-import Col  from 'react-bootstrap/Col'
+import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import { FiArrowUp } from 'react-icons/fi'
 
-function Home(){
+function Home() {
 
     const [book, setBook] = useState("")
     const [result, setResult] = useState([])
     const [apiKey, setApiKey] = useState("AIzaSyB_uDElEniTBpv4FkOxvNZbK3O0rya2bF4")
 
 
-    function hC(event){
+    function hC(event) {
         const book = event.target.value
         setBook(book)
     }
 
-    function hS(event){
+    function hS(event) {
         event.preventDefault()
         axios.get('https://www.googleapis.com/books/v1/volumes?q="' + book + '"&key=' + apiKey + '&country=BR&language=pt&maxResults=40')
             .then(data => {
@@ -42,7 +42,7 @@ function Home(){
                 <h2 className='home'>"Um quarto sem livros é como um corpo sem alma."</h2>
                 <h4 className='home'>Pesquise um livro!</h4>
                 <Form onSubmit={hS} className="d-flex col-sm-4 formApi" role="search">
-                    <input onChange={hC} className="AutoFocus form-control md-2" placeholder='Pesquise um livro' type="text"/>
+                    <input onChange={hC} className="AutoFocus form-control md-2" placeholder='Pesquise um livro' type="text" />
                     <Button id='btn-search' variant="outline-success" type='submit'>Buscar</Button>
                 </Form>
             </Container>
@@ -51,16 +51,16 @@ function Home(){
                     {result.map(book => (
                         <Col>
                             <Card className='card-book text-center'>
-                                <CardImg variant='top' src={book.volumeInfo.imageLinks !== undefined ? book.volumeInfo.imageLinks.thumbnail : ''} alt={book.volumeInfo.title}/>
+                                <CardImg variant='top' src={book.volumeInfo.imageLinks !== undefined ? book.volumeInfo.imageLinks.thumbnail : ''} alt={book.volumeInfo.title} />
                                 <Card.Body>
                                     <div className='card-text'>
                                         <h5 className='card-text'>{book.volumeInfo.title}</h5>
-                                        <h6 className='card-text'>Autor(a): {(book.volumeInfo.authors)? book.volumeInfo.authors[0]:""}</h6>
+                                        <h6 className='card-text'>Autor(a): {(book.volumeInfo.authors) ? book.volumeInfo.authors[0] : ""}</h6>
                                         <p className='card-text'>Ano: {book.volumeInfo.publishedDate}</p>
                                     </div>
                                 </Card.Body>
                                 <Card.Footer>
-                                    <div style={{margin: 'auto'}}>
+                                    <div style={{ margin: 'auto' }}>
                                         <Button variant='info' href={book.volumeInfo.infoLink} target='_blank'>Saiba mais</Button>
                                     </div>
                                 </Card.Footer>
@@ -72,7 +72,7 @@ function Home(){
             </Container>
             <Footer />
         </>
-      )
+    )
 }
 
 export default Home

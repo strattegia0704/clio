@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import '../styles/index.css'
+import '../styles/style.css'
 
 const Footer = () => {
     return (
@@ -62,7 +62,7 @@ const Footer = () => {
                 <div className="row">
                     <div className="col-md-8 col-sm-6 col-12">
                         <p className="copyright-text">
-                            Copyright © 2022 Todos os Direitos Reservados 
+                            Copyright © 2022 Todos os Direitos Reservados
                             <Link to='/'>
                                 <span className="logo"> Clio </span>
                             </Link>

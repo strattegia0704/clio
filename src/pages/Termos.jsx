@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { Container } from 'react-bootstrap'
 
-import '../styles/index.css'
+import '../styles/style.css'
 
 const Termos = () => {
         return (

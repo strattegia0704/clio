@@ -4,17 +4,17 @@ import emailjs from '@emailjs/browser'
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 
-import '../styles/index.css'
+import '../styles/style.css'
 
 function Contato() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
 
-    function sendEmail(e){
+    function sendEmail(e) {
         e.preventDefault()
 
-        if(name === '' || email === '' || message === ''){
+        if (name === '' || email === '' || message === '') {
             alert("Preencha todos os campos")
             return
         }
@@ -26,14 +26,14 @@ function Contato() {
         }
 
         emailjs.send('service_m29k0z8', 'template_62xirbg', templateParams, 'Wbp9PYeyXnHTq9PaB')
-        .then((response) => {
-            console.log("EMAIL ENVIADO", response.status, response.text)
-            setName('')
-            setEmail('')
-            setMessage('')
-        }, (err) => {
-            console.log('ERROR: ', err)
-        })
+            .then((response) => {
+                console.log("EMAIL ENVIADO", response.status, response.text)
+                setName('')
+                setEmail('')
+                setMessage('')
+            }, (err) => {
+                console.log('ERROR: ', err)
+            })
     }
 
     return (

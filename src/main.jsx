@@ -13,7 +13,7 @@ import Signin from './pages/Signin'
 import Signup from './pages/Signup'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/index.css'
+import './styles/style.css'
 import App from './App.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -21,14 +21,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
       <Routes>
         <Route element={<App />}>
-          <Route path='/' element={<Home />}/>
-          <Route path='/sobre' element={<Sobre />}/>
-          <Route path='/contato' element={<Contato />}/>
-          <Route path='/user' element={<User />}/>
-            <Route path='/user/login' element={<Signin />}/>
-            <Route path='/user/registrar' element={<Signup />}/>
-          <Route path='/FAQ' element={<FAQ />}/>
-          <Route path='/privacidade' element={<Privacidade />}/>
+          <Route path='/' element={<Home />} />
+          <Route path='/sobre' element={<Sobre />} />
+          <Route path='/contato' element={<Contato />} />
+          <Route path='/user' element={<User />} />
+          <Route path='/user/login' element={<Signin />} />
+          <Route path='/user/registrar' element={<Signup />} />
+          <Route path='/FAQ' element={<FAQ />} />
+          <Route path='/privacidade' element={<Privacidade />} />
           <Route path='/termos' element={<Termos />} />
         </Route>
       </Routes>
