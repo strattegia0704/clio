@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import $ from 'jquery'
 
 import '../styles/style.css'
 
@@ -13,6 +14,8 @@ import CardImg from 'react-bootstrap/CardImg'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import { FiArrowUp } from 'react-icons/fi'
+import eImg from '../assets/empty.png'
+import pH from '../assets/placeholder.jpg'
 
 function Home() {
 
@@ -43,15 +46,18 @@ function Home() {
                 <h4 className='home'>Pesquise um livro!</h4>
                 <Form onSubmit={hS} className="d-flex col-sm-4 formApi" role="search">
                     <input onChange={hC} className="AutoFocus form-control md-2" placeholder='Pesquise um livro' type="text" />
-                    <Button id='btn-search' variant="outline-success" type='submit'>Buscar</Button>
+                    <Button id='btn-search' variant="outline-success" type='submit' >Buscar</Button>
                 </Form>
+                <div id='empty-space'>
+                    <img src={eImg} alt='Empty Image' width='650' height='500' />
+                </div>
             </Container>
             <Container className='card-container'>
                 <Row xs={1} md={4} className="g-4">
                     {result.map(book => (
                         <Col>
                             <Card className='card-book text-center'>
-                                <CardImg variant='top' src={book.volumeInfo.imageLinks !== undefined ? book.volumeInfo.imageLinks.thumbnail : ''} alt={book.volumeInfo.title} />
+                                <CardImg id='card-img' variant='top' src={book.volumeInfo.imageLinks !== undefined ? book.volumeInfo.imageLinks.thumbnail : pH}/>
                                 <Card.Body>
                                     <div className='card-text'>
                                         <h5 className='card-text'>{book.volumeInfo.title}</h5>
@@ -61,7 +67,7 @@ function Home() {
                                 </Card.Body>
                                 <Card.Footer>
                                     <div style={{ margin: 'auto' }}>
-                                        <Button variant='info' href={book.volumeInfo.infoLink} target='_blank'>Saiba mais</Button>
+                                        <Button id='btn-info' variant='info' href={book.volumeInfo.infoLink} target='_blank'>Saiba mais</Button>
                                     </div>
                                 </Card.Footer>
                             </Card>
