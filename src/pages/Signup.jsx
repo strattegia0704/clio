@@ -7,12 +7,21 @@ import '../styles/forms.css'
 import { Link } from "react-router-dom";
 import * as yup from 'yup'
 
+import Axios from "axios";
+
 const Signup = () => {
 
   const handleRegister = (values) => {
+    values.preventDefault();
+    console.log(values)
+
+    const email = values.target[0].value
+    const password = values.target[1].value
+
+
     Axios.get("http://localhost:5173/user/registrar", {
-      email: values.email,
-      password: values.password,
+      email,
+      password,
     }).then((response) => {
       alert(response.data.msg);
       console.log(response);
