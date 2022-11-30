@@ -428,12 +428,8 @@ h2.home {
 }
 
 #empty-space {
-    background-position: center;
-    margin: auto;
-    height: 25rem;
-    width: 35rem;
-    margin-top: -3rem;
-    margin-bottom: 5rem;
+    display: flex;
+    justify-content: center;
 }
 
 .sobre {
