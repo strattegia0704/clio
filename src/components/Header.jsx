@@ -20,7 +20,7 @@ const Header = () => {
           <Navbar.Collapse id='navbarScroll'>
             <Nav
               className='me-auto my-2 my-lg-0'
-              style={{ maxHeight: '100px' }}
+              style={{ maxHeight: '300px' }}
               navbarScroll id='nav-item'
             >
               <Nav.Link as={Link} id='nav-link' className='nav-link' to='/'>
@@ -32,7 +32,7 @@ const Header = () => {
               <Nav.Link as={Link} id='nav-link' className='nav-link' to='/contato'>
                 Contato
               </Nav.Link>
-              <Nav.Link as={Link} id='Profile-link' className='nav-link' to='#'>
+              <Nav.Link as={Link} id='user-link' className='nav-link' to='#'>
                 Perfil
               </Nav.Link>
             </Nav>
