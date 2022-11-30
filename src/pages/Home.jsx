@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import $ from 'jquery'
 
 import '../styles/style.css'
 
@@ -17,25 +16,38 @@ import { FiArrowUp } from 'react-icons/fi'
 import eImg from '../assets/empty.png'
 import pH from '../assets/placeholder.jpg'
 
+const apiKey = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY
+
 function Home() {
 
     const [book, setBook] = useState("")
+    const [isSearch, setIsSearch] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
     const [result, setResult] = useState([])
-    const [apiKey, setApiKey] = useState("AIzaSyB_uDElEniTBpv4FkOxvNZbK3O0rya2bF4")
 
 
-    function hC(event) {
+    function handleChange(event) {
         const book = event.target.value
         setBook(book)
     }
 
-    function hS(event) {
-        event.preventDefault()
-        axios.get('https://www.googleapis.com/books/v1/volumes?q="' + book + '"&key=' + apiKey + '&country=BR&language=pt&maxResults=40')
-            .then(data => {
-                console.log(data.data.items)
-                setResult(data.data.items)
-            })
+    function handleSubmit(e) {
+        e.preventDefault()
+
+        setIsLoading(true)
+        axios.get('https://www.googleapis.com/books/v1/volumes', {
+            params: {
+                q: book,
+                key: apiKey,
+                maxResults: 40,
+                language: 'pt',
+                country: 'BR'
+            }
+        }).then(data => {
+            setIsLoading(false)
+            setIsSearch(true)
+            setResult(data.data.items)
+        })
     }
 
     return (
@@ -44,18 +56,26 @@ function Home() {
             <Container>
                 <h2 className='home'>"Um quarto sem livros é como um corpo sem alma."</h2>
                 <h4 className='home'>Pesquise um livro!</h4>
-                <Form onSubmit={hS} className="d-flex col-sm-4 formApi" role="search">
-                    <input onChange={hC} className="AutoFocus form-control md-2" placeholder='Pesquise um livro' type="text" />
+                <Form onSubmit={handleSubmit} className="d-flex col-sm-4 formApi" role="search">
+                    <input onChange={handleChange} className="AutoFocus form-control md-2" placeholder='Pesquise um livro' type="text" />
                     <Button id='btn-search' variant="outline-success" type='submit' >Buscar</Button>
                 </Form>
+                {!isSearch && (
                 <div id='empty-space'>
                     <img src={eImg} alt='Empty Image' />
-                </div>
+                </div>  
+                )}
+
+                {isLoading && (
+                    <div id='empty-space'>
+                        <h3>Carregando...</h3>
+                    </div>
+                )}
             </Container>
             <Container className='card-container'>
                 <Row xs={1} md={4} className="g-4">
                     {result.map(book => (
-                        <Col>
+                        <Col key={book.id}>
                             <Card className='card-book text-center'>
                                 <CardImg id='card-img' variant='top' src={book.volumeInfo.imageLinks !== undefined ? book.volumeInfo.imageLinks.thumbnail : pH}/>
                                 <Card.Body>
