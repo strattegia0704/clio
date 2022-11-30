@@ -119,8 +119,9 @@ h6 {
     margin: auto;
 }
 
-#nav-link {
-    position: relative;
+#nav-link,
+#user-link {
+    position:  relative;
     text-align: center;
     color: #ebf0eb;
     padding: 0 1.35rem !important;
@@ -129,7 +130,8 @@ h6 {
     padding: 0 10px;
 }
 
-#nav-link:after {
+#nav-link:after,
+#user-link:after {
     content: "";
     position: absolute;
     background-color: #741222;
@@ -140,11 +142,13 @@ h6 {
     transition: .3s;
 }
 
-#nav-link:hover {
+#nav-link:hover,
+#user-link:hover {
     color: #fff;
 }
 
-#nav-link:hover:after {
+#nav-link:hover:after, 
+#user-link:hover:after{
     width: 100%;
 }
 
@@ -327,6 +331,7 @@ p.copyright-text {
     background-color: #735c80;
     font-size: 18px;
     transition: background-color, transform 0.8s;
+    transition: .5s;
 }
 
 .button-cont:hover {
@@ -423,10 +428,11 @@ h2.home {
 }
 
 #empty-space {
-    height: 25rem;
     background-position: center;
-    width: 55%;
     margin: auto;
+    height: 25rem;
+    width: 35rem;
+    margin-top: -3rem;
     margin-bottom: 5rem;
 }
 
@@ -445,13 +451,36 @@ h2.home {
 */
 
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     #logo {
         margin: 0;
     }
 
     #nav-link {
         margin-bottom: .8rem;
+    }
+
+    #nav-link:hover:after,
+    #user-link:hover:after {
+        position: absolute;
+        left: 6.9rem;
+        width: 40%;
+    }
+
+    #nav-link:after,
+    #user-link:after {
+        bottom: -3px;
+    }
+
+    #empty-space {
+        margin-top: 2rem;
+        margin-bottom: -5rem;
+        width: 25rem;
+    }
+
+    #empty-space img {
+        height: 20rem;
+        width: 25rem;
     }
 
     .User,
@@ -535,7 +564,8 @@ h2.home {
 }
 
 @media (min-width: 500px) {
-    #Profile-link {
+    #Profile-link,
+    #user-link {
         display: none;
     }
 }

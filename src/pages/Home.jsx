@@ -49,7 +49,7 @@ function Home() {
                     <Button id='btn-search' variant="outline-success" type='submit' >Buscar</Button>
                 </Form>
                 <div id='empty-space'>
-                    <img src={eImg} alt='Empty Image' width='650' height='500' />
+                    <img src={eImg} alt='Empty Image' />
                 </div>
             </Container>
             <Container className='card-container'>
