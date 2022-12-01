@@ -39,7 +39,7 @@ const Sobre = () => {
           </p>
           <h3 className="sobre-sub">Integrantes do grupo</h3>
           <h6 className="sobre">Turma: 2º Ano D</h6>
-          <p className="sobre">Andressa Hitschelly; Gabriel Almeida; Iuri Cavalcante; Joisson Rocha e Matheus Filipe.</p>
+          <p className="sobre">Andressa Hitschelly Carvalho de Lourenço; Gabriel Almeida Queiroz; Iuri Costa Cavalcante; Joisson Victor Brandão Rocha e Matheus Filipe da Silva Ponte.</p>
         </div>
       </Container>
       <Footer />
