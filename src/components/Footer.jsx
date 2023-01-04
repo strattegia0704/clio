@@ -19,7 +19,7 @@ const Footer = () => {
                         </p>
                     </div>
                     <div className="col-6 col-md-3 alunos">
-                        <h6> Membros do Grupo</h6>
+                        <h6> Membros <span className="f-mob"> do Grupo</span></h6>
                         <ul className="footer-links">
                             <li>
                                 <a style={{fontWeight: 'bolder',}}>Turma: 2º D</a>
