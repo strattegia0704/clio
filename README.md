@@ -1,5 +1,5 @@
 # Clio
- Projeto "Clio" - Um acervo digital de livros
+ Projeto "Clio" - Um mecanismo de pesquisa de livros
 
 ## Variaveis de ambiente
 Para rodar o projeto é necessário criar um arquivo .env.local na raiz do projeto com as seguintes variaveis:
