@@ -32,15 +32,15 @@ const Header = () => {
               <Nav.Link as={Link} id='nav-link' className='nav-link' to='/contato'>
                 Contato
               </Nav.Link>
-              <Nav.Link as={Link} id='user-link' className='nav-link' to='/user'>
+              {/* <Nav.Link as={Link} id='user-link' className='nav-link' to='/user'>
                 Perfil
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
-            <div className='User'>
+            {/* <div className='User'>
               <Link to='/user' className='User-link' id='User-btn'>
                 <BsPersonCircle />
               </Link>
-            </div>
+            </div> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>

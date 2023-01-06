@@ -68,7 +68,7 @@ function Home() {
 
                 {isLoading && (
                     <div id='empty-space'>
-                        <h3>Carregando...</h3>
+                        <h3 className='load'>Carregando...</h3>
                     </div>
                 )}
             </Container>
