@@ -108,6 +108,8 @@ h6 {
 }
 
 #logo {
+    position:  relative;
+    left: 10rem;
     width: 60px;
     height: 60px;
 }
@@ -127,6 +129,7 @@ h6 {
 #nav-link,
 #user-link {
     position:  relative;
+    left: 33rem;
     text-align: center;
     color: #ebf0eb;
     padding: 0 1.35rem !important;
@@ -285,7 +288,7 @@ p.copyright-text {
 }
 
 .container-cont {
-    min-height: 85vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -293,6 +296,8 @@ p.copyright-text {
 }
 
 .title-cont {
+    position: relative;
+    left: -.5rem;
     margin-bottom: 30px;
     text-transform: uppercase;
     color: #26272b;
@@ -457,12 +462,21 @@ h2.home {
     justify-content: center;
 }
 
+.load {
+    margin-top: 4rem;
+}
+
 .sobre {
-    padding-top: .25rem;
+    padding-top: .5rem;
 }
 
 .sobre-sub {
-    padding-top: 1rem;
+    padding-top: 1.5rem;
+}
+
+.li-marc {
+    list-style: upper-alpha;
+    padding-bottom: .5rem;
 }
 
 /* 
@@ -474,10 +488,14 @@ h2.home {
 
 @media (max-width: 600px) {
     #logo {
+        position: relative;
+        left: 0;
         margin: 0;
     }
 
     #nav-link {
+        position: relative;
+        left: 0;
         margin-bottom: .8rem;
     }
 
@@ -485,7 +503,7 @@ h2.home {
     #user-link:hover:after {
         position: absolute;
         left: 6.9rem;
-        width: 40%;
+        width: 35%;
     }
 
     #nav-link:after,
@@ -583,22 +601,46 @@ h2.home {
         padding-bottom: -10rem;
     }
 
-    .container-cont {
-        min-height: 100vh;
+    .title-cont {
+        position: relative;
+        left: .35rem;
     }
 
     .subtitle-cont {
         width: 25rem;
     }
 
+    .form-cont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .input-cont,
     .textarea-cont {
         width: 23rem;
-        margin-left: 1.8rem;
     }
 
     .button-cont {
-        margin-left: -1.8rem;
+        position: relative;
+        left: 0;
+    }
+
+    .sobre,
+    .li-marc {
+        padding-bottom: 1rem;
+        width: 95%;
+        position: relative;
+        left: .5rem;
+    }
+
+    .sobre-sub {
+        padding-bottom: 1rem;
+    }
+
+    .load {
+        margin-top: 3rem;
+        margin-bottom: 5rem;
     }
 }
 
