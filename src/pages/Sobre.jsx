@@ -31,15 +31,6 @@ const Sobre = () => {
           <p className='sobre'>
             Clio tem como base em sua estrutura um negocio 100% online com serviços realizados em uma plataforma/acervo digital de livros que possa ser facilmente encontrado na internet, além disso Clio busca sempre atender os pedidos e requisões dos nosso clientes por isso temos uma equipe de comunicações em prontidão para lhe dar o devido suporte e ajuda com oque precisar. Caso deseje entrar em contato com conosco clique <Link to='/contato'> aqui </Link>
           </p>
-          <h2 style={{marginTop: '4rem'}} id='info-tec'>Informações Técnicas</h2>
-          <hr />
-          <h3 className="sobre-sub">Ferramentas utilizadas</h3>
-          <p className="sobre">
-            Nesse site foram utilizadas o Visual Studio Code: editor de código e IDE de desenvolvimento; tecnologias: ReactJS, Google Books API, HTML, JS e CSS; hospedagem do site: Vercel; hospedagem/versionamento do código: GitHub.
-          </p>
-          <h3 className="sobre-sub">Integrantes do grupo</h3>
-          <h6 className="sobre">Turma: 2º Ano D</h6>
-          <p className="sobre">Andressa Hitschelly Carvalho de Lourenço; Gabriel Almeida Queiroz; Iuri Costa Cavalcante; Joisson Victor Brandão Rocha e Matheus Filipe da Silva Ponte.</p>
         </div>
       </Container>
       <Footer />
