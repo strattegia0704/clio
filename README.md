@@ -1,5 +1,5 @@
 # Clio, a a book search engine
- Projeto "Clio" - Um mecanismo de pesquisa de livros.
+ Projeto "Clio" - Uma aplicação em ReactJS, utilizando Google Books API, com o fim de pesquisar livros solicitados.
 
 ----
 ## Variaveis de ambiente
