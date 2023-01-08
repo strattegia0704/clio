@@ -1,23 +1,21 @@
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-import Container from 'react-bootstrap/Container'
+import Container from "react-bootstrap/Container";
 
-import '../styles/forms.css'
+import "../styles/forms.css";
 import { Link } from "react-router-dom";
-import * as yup from 'yup'
+import * as yup from "yup";
 
 import Axios from "axios";
 
 const Signup = () => {
-
   const handleRegister = (values) => {
     values.preventDefault();
-    console.log(values)
+    console.log(values);
 
-    const email = values.target[0].value
-    const password = values.target[1].value
-
+    const email = values.target[0].value;
+    const password = values.target[1].value;
 
     Axios.get("http://localhost:5173/user/registrar", {
       email,
@@ -47,7 +45,8 @@ const Signup = () => {
     var validpass = document.getElementById("pass").value;
 
     if (validpass.length < 8) {
-      document.getElementById("valid-pass").innerHTML = "<p className='copyrigth-text'>Minimo de 8 Caracteres</p>";
+      document.getElementById("valid-pass").innerHTML =
+        "<p className='copyrigth-text'>Minimo de 8 Caracteres</p>";
       return false;
     } else {
       document.getElementById("valid-pass").innerHTML = "";
@@ -73,18 +72,43 @@ const Signup = () => {
       <Container>
         <div className="login-page">
           <div className="form">
-            <form className="login-form "
+            <form
+              className="login-form "
               initialValues={{}}
               onSubmit={handleRegister}
-              validationSchema={validationsRegister}>
-              <h2>Crie sua <br />Conta</h2>
-              <input type="email" required placeholder="Digite o seu email" id="user" autocomplete="off" name="email" />
-              <input onInput={formvalid} type="password" required placeholder="Digite sua senha" id="pass" autocomplete="off" name='password' />
-              <img src="https://cdn2.iconfinder.com/data/icons/basic-ui-interface-v-2/32/hide-512.png" onClick={show} id="showing" />
+              validationSchema={validationsRegister}
+            >
+              <h2>
+                Crie sua <br />
+                Conta
+              </h2>
+              <input
+                type="email"
+                required
+                placeholder="Digite o seu email"
+                id="user"
+                autocomplete="off"
+                name="email"
+              />
+              <input
+                onInput={formvalid}
+                type="password"
+                required
+                placeholder="Digite sua senha"
+                id="pass"
+                autocomplete="off"
+                name="password"
+              />
+              <img
+                src="https://cdn2.iconfinder.com/data/icons/basic-ui-interface-v-2/32/hide-512.png"
+                onClick={show}
+                id="showing"
+              />
               <span id="valid-pass"></span>
               <button type="submit"> Cadastra-se </button>
-              <p className="message">Já tem uma conta?
-                <Link to='/user/login'> Clique aqui!</Link>
+              <p className="message">
+                Já tem uma conta?
+                <Link to="/user/login"> Clique aqui!</Link>
               </p>
             </form>
           </div>
@@ -93,7 +117,7 @@ const Signup = () => {
       </Container>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;

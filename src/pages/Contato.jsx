@@ -1,79 +1,90 @@
-import { useState } from "react"
-import emailjs from '@emailjs/browser'
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-import '../styles/style.css'
+import "../styles/style.css";
 
 function Contato() {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [message, setMessage] = useState('')
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-    function sendEmail(e) {
-        e.preventDefault()
+  function sendEmail(e) {
+    e.preventDefault();
 
-        if (name === '' || email === '' || message === '') {
-            alert("Preencha todos os campos")
-            return
-        }
-
-        const templateParams = {
-            from_name: name,
-            message: message,
-            email: email
-        }
-
-        emailjs.send('service_m29k0z8', 'template_62xirbg', templateParams, 'Wbp9PYeyXnHTq9PaB')
-            .then((response) => {
-                console.log("EMAIL ENVIADO", response.status, response.text)
-                setName('')
-                setEmail('')
-                setMessage('')
-            }, (err) => {
-                console.log('ERROR: ', err)
-            })
+    if (name === "" || email === "" || message === "") {
+      alert("Preencha todos os campos");
+      return;
     }
 
-    return (
-        <>
-            <Header />
-            <div className="container-cont">
-                <h1 className="title-cont">Contato</h1>
-                <h5 className="subtitle-cont">Possui alguma dúvida, feedback ou assunto mais importante a se tratar conosco? Entre em contato!</h5>
+    const templateParams = {
+      from_name: name,
+      message: message,
+      email: email,
+    };
 
-                <form className="form-cont" onSubmit={sendEmail}>
-                    <input
-                        className="input-cont"
-                        type="text"
-                        placeholder="Digite seu nome"
-                        onChange={(e) => setName(e.target.value)}
-                        value={name}
-                    />
+    emailjs
+      .send(
+        "service_m29k0z8",
+        "template_62xirbg",
+        templateParams,
+        "Wbp9PYeyXnHTq9PaB"
+      )
+      .then(
+        (response) => {
+          console.log("EMAIL ENVIADO", response.status, response.text);
+          setName("");
+          setEmail("");
+          setMessage("");
+        },
+        (err) => {
+          console.log("ERROR: ", err);
+        }
+      );
+  }
 
-                    <input
-                        className="input-cont"
-                        type="text"
-                        placeholder="Digite seu email"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                    />
+  return (
+    <>
+      <Header />
+      <div className="container-cont">
+        <h1 className="title-cont">Contato</h1>
+        <h5 className="subtitle-cont">
+          Possui alguma dúvida, feedback ou assunto mais importante a se tratar
+          conosco? Entre em contato!
+        </h5>
 
-                    <textarea
-                        className="textarea-cont"
-                        placeholder="Digite sua mensagem..."
-                        onChange={(e) => setMessage(e.target.value)}
-                        value={message}
-                    />
+        <form className="form-cont" onSubmit={sendEmail}>
+          <input
+            className="input-cont"
+            type="text"
+            placeholder="Digite seu nome"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          />
 
-                    <input className="button-cont" type="submit" value="Enviar" />
-                </form>
+          <input
+            className="input-cont"
+            type="text"
+            placeholder="Digite seu email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
 
-            </div>
-            <Footer />
-        </>
-    );
+          <textarea
+            className="textarea-cont"
+            placeholder="Digite sua mensagem..."
+            onChange={(e) => setMessage(e.target.value)}
+            value={message}
+          />
+
+          <input className="button-cont" type="submit" value="Enviar" />
+        </form>
+      </div>
+      <Footer />
+    </>
+  );
 }
 
-export default Contato
+export default Contato;

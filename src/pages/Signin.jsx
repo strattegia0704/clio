@@ -1,14 +1,13 @@
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-import Container from 'react-bootstrap/Container'
-import * as yup from 'yup'
+import Container from "react-bootstrap/Container";
+import * as yup from "yup";
 
-import '../styles/forms.css'
+import "../styles/forms.css";
 import { Link } from "react-router-dom";
 
 const Signin = () => {
-
   const handleLogin = (values) => {
     Axios.get("http://localhost:5173/user/login", {
       email: values.email,
@@ -48,14 +47,37 @@ const Signin = () => {
       <Container>
         <div className="login-page">
           <div className="form">
-            <form className="login-form "
+            <form
+              className="login-form "
               initialValues={{}}
               onSubmit={handleLogin}
-              validationSchema={validationsLogin}>
-              <h2> Entre em sua <br /> Conta</h2>
-              <input type="text" required placeholder="Digite o seu email" id="user" autoComplete="off" name='email' />
-              <input type="password" required placeholder="Digite sua senha" id="pass" autoComplete="off" name='password' />
-              <img src="https://cdn2.iconfinder.com/data/icons/basic-ui-interface-v-2/32/hide-512.png" onClick={show} id="showing" />
+              validationSchema={validationsLogin}
+            >
+              <h2>
+                {" "}
+                Entre em sua <br /> Conta
+              </h2>
+              <input
+                type="text"
+                required
+                placeholder="Digite o seu email"
+                id="user"
+                autoComplete="off"
+                name="email"
+              />
+              <input
+                type="password"
+                required
+                placeholder="Digite sua senha"
+                id="pass"
+                autoComplete="off"
+                name="password"
+              />
+              <img
+                src="https://cdn2.iconfinder.com/data/icons/basic-ui-interface-v-2/32/hide-512.png"
+                onClick={show}
+                id="showing"
+              />
               <span id="valid-pass"></span>
               <button type="submit"> Entrar </button>
               <div className="other">
@@ -64,10 +86,8 @@ const Signin = () => {
                     Esqueceu sua senha?
                   </Link>
                 </p> */}
-                <p className='message'>
-                  <Link to='/user/registrar'>
-                    Registre-se aqui!
-                  </Link>
+                <p className="message">
+                  <Link to="/user/registrar">Registre-se aqui!</Link>
                 </p>
               </div>
             </form>
@@ -76,7 +96,7 @@ const Signin = () => {
       </Container>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Signin
+export default Signin;
